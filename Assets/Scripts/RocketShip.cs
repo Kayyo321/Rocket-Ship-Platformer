@@ -23,22 +23,38 @@ public class RocketShip : MonoBehaviour
 
     private void RocketMovement()
     {
-        float rotationSpeed = rotationalThrust * Time.deltaTime;
-        float thrustScale = mainThrust * Time.deltaTime;
-
         if (Input.GetKey(KeyCode.Space))
-        { 
-            myRigidBody.AddRelativeForce(Vector3.up * thrustScale);
+        {
+            MovementControls("up");
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(-Vector3.forward * rotationSpeed);
+            MovementControls("right");
         }
 
         if (Input.GetKey(KeyCode.A))
         {
+            MovementControls("left");
+        }
+    }
+
+    private void MovementControls(string direction)
+    {
+        float rotationSpeed = rotationalThrust * Time.deltaTime;
+        float thrustScale = mainThrust * Time.deltaTime;
+
+        if (direction == "left")
+        {
             transform.Rotate(Vector3.forward * rotationSpeed);
+        }
+        else if (direction == "right")
+        {
+            transform.Rotate(-Vector3.forward * rotationSpeed);
+        }
+        else if (direction == "up")
+        {
+            myRigidBody.AddRelativeForce(Vector3.up * thrustScale);
         }
     }
 }

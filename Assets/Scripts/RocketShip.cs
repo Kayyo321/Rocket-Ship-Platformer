@@ -23,6 +23,11 @@ public class RocketShip : MonoBehaviour
         RocketMovement();
     }
 
+    private void LateUpdate()
+    {
+        transform.localEulerAngles = new Vector3(0, 0, transform.localEulerAngles.z);
+    }
+
     private void RocketMovement()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -51,6 +56,8 @@ public class RocketShip : MonoBehaviour
 
     private void MovementControls(string direction)
     {
+        myRigidBody.freezeRotation = true;
+
         float rotationSpeed = rotationalThrust * Time.deltaTime;
         float thrustScale = mainThrust * Time.deltaTime;
 
@@ -66,5 +73,7 @@ public class RocketShip : MonoBehaviour
         {
             myRigidBody.AddRelativeForce(Vector3.up * thrustScale);
         }
+
+        myRigidBody.freezeRotation = false;
     }
 }

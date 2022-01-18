@@ -7,12 +7,14 @@ public class RocketShip : MonoBehaviour
     public float mainThrust = 2.35f;
     public float rotationalThrust = 0.75f;
 
-    Rigidbody myRigidBody; 
+    Rigidbody myRigidBody;
+    AudioSource myAudioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody>();
+        myAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,7 +27,15 @@ public class RocketShip : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
+            if (!myAudioSource.isPlaying)
+                myAudioSource.Play();
+
             MovementControls("up");
+        }
+        else
+        {
+            if (myAudioSource.isPlaying)
+                myAudioSource.Stop();
         }
 
         if (Input.GetKey(KeyCode.D))

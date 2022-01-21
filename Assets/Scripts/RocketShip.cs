@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RocketShip : MonoBehaviour
 {
-    public float mainThrust = 2.35f;
-    public float rotationalThrust = 0.75f;
+    [SerializeField] float mainThrust = 2.35f;
+    [SerializeField] float rotationalThrust = 0.75f;
 
     Rigidbody myRigidBody;
     AudioSource myAudioSource;
@@ -21,6 +21,27 @@ public class RocketShip : MonoBehaviour
     void Update()
     {
         RocketMovement();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Debug.Log("Collided!");
+
+        switch(collision.gameObject.tag)
+        {
+            case "Friendly":
+                print("I'm Okay!");
+                break;
+            case "Finish":
+                print("Success!");
+                break;
+            case "Fuel":
+                print("Fueled Up!");
+                break;
+            default:
+                print("DEAD!");
+                break;
+        }
     }
 
     private void LateUpdate()

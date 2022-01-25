@@ -38,8 +38,22 @@ public class RocketShip : MonoBehaviour
             case "Fuel":
                 print("Fueled Up!");
                 break;
+            case "Destructable":
+                print("Destroyed Something!");
+
+                // Disable Rocket, and Object collided with
+
+                gameObject.SetActive(false);
+                collision.gameObject.SetActive(false);
+
+                break;
             default:
-                print("DEAD!");
+                print("Died!");
+
+                // Only disable Rocket
+
+                gameObject.SetActive(false);
+
                 break;
         }
     }

@@ -51,7 +51,7 @@ public class RocketShip : MonoBehaviour
 
                 break;
             case "Teleporter":
-                print("Teleporting...");
+                print("Teleporting... Keep your arms inside the attraction please");
 
                 transform.position = TeleportTo.transform.position;
                 TeleportTo.gameObject.SetActive(false);

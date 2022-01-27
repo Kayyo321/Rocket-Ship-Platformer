@@ -343,7 +343,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 48
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &8915916494402871595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainThrust: 15000
   rotationalThrust: 200.01
+  TeleportTo: {fileID: 0}
+  StartTeleporter: {fileID: 0}
 --- !u!82 &9062315668253064272
 AudioSource:
   m_ObjectHideFlags: 0

@@ -10,6 +10,9 @@ public class RocketShip : MonoBehaviour
     Rigidbody myRigidBody;
     AudioSource myAudioSource;
 
+    public GameObject TeleportTo;
+    public GameObject StartTeleporter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +48,13 @@ public class RocketShip : MonoBehaviour
 
                 gameObject.SetActive(false);
                 collision.gameObject.SetActive(false);
+
+                break;
+            case "Teleporter":
+                print("Teleporting...");
+
+                transform.position = TeleportTo.transform.position;
+                TeleportTo.gameObject.SetActive(false);
 
                 break;
             default:

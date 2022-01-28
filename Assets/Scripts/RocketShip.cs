@@ -12,12 +12,15 @@ public class RocketShip : MonoBehaviour
 
     public GameObject TeleportTo;
     public GameObject StartTeleporter;
+    GameController gameController;
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody>();
         myAudioSource = GetComponent<AudioSource>();
+
+        gameController = FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -37,6 +40,9 @@ public class RocketShip : MonoBehaviour
                 break;
             case "Finish":
                 print("Success!");
+
+                gameController.NextLevel();
+
                 break;
             case "Fuel":
                 print("Fueled Up!");
@@ -47,6 +53,7 @@ public class RocketShip : MonoBehaviour
                 // Disable Rocket, and Object collided with
 
                 gameObject.SetActive(false);
+                gameController.RocketDestroyed();
                 collision.gameObject.SetActive(false);
 
                 break;
@@ -63,6 +70,7 @@ public class RocketShip : MonoBehaviour
                 // Only disable Rocket
 
                 gameObject.SetActive(false);
+                gameController.RocketDestroyed();
 
                 break;
         }

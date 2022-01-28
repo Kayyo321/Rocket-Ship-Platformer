@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3837137914018804158}
   m_Layer: 0
   m_Name: Point B
-  m_TagString: Teleporter
+  m_TagString: SecondTeleporter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

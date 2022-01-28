@@ -951,7 +951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1784921371920034126, guid: c0c58834ab60b084ca098a343adcaf76, type: 3}
       propertyPath: m_LocalScale.x
-      value: 99.798004
+      value: 95.9488
       objectReference: {fileID: 0}
     - target: {fileID: 1784921371920034126, guid: c0c58834ab60b084ca098a343adcaf76, type: 3}
       propertyPath: m_LocalScale.y
@@ -963,7 +963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1784921371920034126, guid: c0c58834ab60b084ca098a343adcaf76, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.1954923
+      value: 6.2
       objectReference: {fileID: 0}
     - target: {fileID: 1784921371920034126, guid: c0c58834ab60b084ca098a343adcaf76, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1121,7 +1121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1784921371920034126, guid: c0c58834ab60b084ca098a343adcaf76, type: 3}
       propertyPath: m_LocalScale.x
-      value: 100.308
+      value: 97.80331
       objectReference: {fileID: 0}
     - target: {fileID: 1784921371920034126, guid: c0c58834ab60b084ca098a343adcaf76, type: 3}
       propertyPath: m_LocalScale.y
@@ -1505,10 +1505,6 @@ PrefabInstance:
     - target: {fileID: 385920975281005145, guid: decc76428b3b92a4c9e47f9b91d4a7c0, type: 3}
       propertyPath: m_Name
       value: Point B
-      objectReference: {fileID: 0}
-    - target: {fileID: 385920975281005145, guid: decc76428b3b92a4c9e47f9b91d4a7c0, type: 3}
-      propertyPath: m_TagString
-      value: SecondTeleporter
       objectReference: {fileID: 0}
     - target: {fileID: 2718107139467400489, guid: decc76428b3b92a4c9e47f9b91d4a7c0, type: 3}
       propertyPath: m_RootOrder

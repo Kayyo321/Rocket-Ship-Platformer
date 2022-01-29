@@ -1563,6 +1563,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point B
       objectReference: {fileID: 0}
+    - target: {fileID: 385920975281005145, guid: decc76428b3b92a4c9e47f9b91d4a7c0, type: 3}
+      propertyPath: m_TagString
+      value: Teleporter
+      objectReference: {fileID: 0}
     - target: {fileID: 2718107139467400489, guid: decc76428b3b92a4c9e47f9b91d4a7c0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1624,6 +1628,10 @@ PrefabInstance:
     - target: {fileID: 8251936546410082482, guid: fcf3a727a4df9e84d9dfea6a0b0a5d89, type: 3}
       propertyPath: m_Name
       value: Point A
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251936546410082482, guid: fcf3a727a4df9e84d9dfea6a0b0a5d89, type: 3}
+      propertyPath: m_TagString
+      value: Teleporter
       objectReference: {fileID: 0}
     - target: {fileID: 8693763557902681132, guid: fcf3a727a4df9e84d9dfea6a0b0a5d89, type: 3}
       propertyPath: m_RootOrder

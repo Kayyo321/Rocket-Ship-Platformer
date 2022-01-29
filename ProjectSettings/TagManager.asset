@@ -9,6 +9,7 @@ TagManager:
   - Destructable
   - Teleporter
   - SecondTeleporter
+  - Button
   layers:
   - Default
   - TransparentFX

@@ -360,6 +360,9 @@ MonoBehaviour:
   rotationalThrust: 200.01
   TeleportTo: {fileID: 0}
   StartTeleporter: {fileID: 0}
+  button: {fileID: 0}
+  buttonReaction: {fileID: 0}
+  turnButtonOn: 0
 --- !u!82 &9062315668253064272
 AudioSource:
   m_ObjectHideFlags: 0

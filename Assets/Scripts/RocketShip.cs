@@ -6,13 +6,19 @@ public class RocketShip : MonoBehaviour
 {
     [SerializeField] float mainThrust = 2.35f;
     [SerializeField] float rotationalThrust = 0.75f;
+    [SerializeField] GameObject TeleportTo;
+    [SerializeField] GameObject secondTeleportTo;
+    [SerializeField] GameObject button;
+    [SerializeField] GameObject buttonReaction;
+    [SerializeField] GameObject camera;
+    [SerializeField] GameObject cameraPositionTwo;
 
     Rigidbody myRigidBody;
     AudioSource myAudioSource;
 
-    public GameObject TeleportTo;
-    public GameObject StartTeleporter;
     GameController gameController;
+
+    public bool turnButtonOn;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +68,27 @@ public class RocketShip : MonoBehaviour
 
                 transform.position = TeleportTo.transform.position;
                 TeleportTo.gameObject.SetActive(false);
+
+                break;
+            case "SecondTeleporter":
+                
+                if (!turnButtonOn)
+                { 
+                    button.SetActive(true);
+                    turnButtonOn = !turnButtonOn;
+                }
+
+                transform.position = secondTeleportTo.transform.position;
+                secondTeleportTo.gameObject.SetActive(false);
+
+                break;
+            case "Button":
+
+                button.SetActive(false);
+                buttonReaction.SetActive(false);
+
+                camera.transform.position = cameraPositionTwo.transform.position;
+                camera.transform.rotation = cameraPositionTwo.transform.rotation;
 
                 break;
             default:

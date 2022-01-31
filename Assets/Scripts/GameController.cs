@@ -27,7 +27,10 @@ public class GameController : MonoBehaviour
         var i_sceneToLoad = (SceneManager.GetActiveScene().buildIndex + 1);
 
         if (i_sceneToLoad != SceneManager.sceneCountInBuildSettings)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        {    
+            SceneManager.LoadScene(i_sceneToLoad);
+            print(SceneManager.sceneCountInBuildSettings);
+        }
         else
         {
             print("Game Over!");

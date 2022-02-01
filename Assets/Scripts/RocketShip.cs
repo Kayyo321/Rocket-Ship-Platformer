@@ -168,15 +168,13 @@ public class RocketShip : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            if (!myAudioSource.isPlaying)
-                myAudioSource.Play();
+            if (!myAudioSource.isPlaying) { myAudioSource.Play(); }
 
             MovementControls("up");
         }
         else
         {
-            if (myAudioSource.isPlaying)
-                myAudioSource.Stop();
+            if (myAudioSource.isPlaying) { myAudioSource.Stop(); }
         }
 
         if (Input.GetKey(KeyCode.D))

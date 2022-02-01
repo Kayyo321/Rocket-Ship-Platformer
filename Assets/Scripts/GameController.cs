@@ -50,8 +50,6 @@ public class GameController : MonoBehaviour
 
     public void NextLevel()
     {
-        rocketShip.moving = false;
-        print("Are we moving? " + rocketShip.moving);
         StartCoroutine(LoadNexetLevel());
     }
 }

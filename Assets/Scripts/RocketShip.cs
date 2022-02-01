@@ -10,11 +10,14 @@ public class RocketShip : MonoBehaviour
     [SerializeField] GameObject secondTeleportTo;
     [SerializeField] GameObject button;
     [SerializeField] GameObject buttonReaction;
-    [SerializeField] GameObject camera;
+    [SerializeField] GameObject myCamera;
     [SerializeField] GameObject cameraPositionTwo;
+    [SerializeField] ParticleSystem explosion;
 
     Rigidbody myRigidBody;
+
     AudioSource myAudioSource;
+    Audiomanager explosionSound;
 
     GameController gameController;
 
@@ -26,6 +29,8 @@ public class RocketShip : MonoBehaviour
     {
         myRigidBody = GetComponent<Rigidbody>();
         myAudioSource = GetComponent<AudioSource>();
+
+        explosionSound = FindObjectOfType<Audiomanager>();
 
         gameController = FindObjectOfType<GameController>();
     }
@@ -61,6 +66,11 @@ public class RocketShip : MonoBehaviour
 
                 // Disable Rocket, and Object collided with
 
+                explosion.transform.position = gameObject.transform.position;
+                explosion.Play();
+
+                explosionSound.PlaySound();
+
                 gameObject.SetActive(false);
                 gameController.RocketDestroyed();
                 collision.gameObject.SetActive(false);
@@ -90,8 +100,8 @@ public class RocketShip : MonoBehaviour
                 button.SetActive(false);
                 buttonReaction.SetActive(false);
 
-                camera.transform.position = cameraPositionTwo.transform.position;
-                camera.transform.rotation = cameraPositionTwo.transform.rotation;
+                myCamera.transform.position = cameraPositionTwo.transform.position;
+                myCamera.transform.rotation = cameraPositionTwo.transform.rotation;
 
                 break;
             default:
@@ -101,6 +111,11 @@ public class RocketShip : MonoBehaviour
 
                 if (moving) // make sure that we haven't reached the end of the level yet
                 {
+                    explosion.transform.position = gameObject.transform.position;
+                    explosion.Play();
+
+                    explosionSound.PlaySound();
+
                     gameObject.SetActive(false);
                     gameController.RocketDestroyed();
                 }

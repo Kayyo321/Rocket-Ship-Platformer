@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public RocketShip rocketShip;
+
     public void ResetGame()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(LoadFirstLevel());
     }
 
     public void RocketDestroyed()
@@ -22,21 +24,34 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void NextLevel()
+
+    public IEnumerator LoadFirstLevel()
     {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(0);
+    }
+
+    public IEnumerator LoadNexetLevel()
+    {
+        yield return new WaitForSeconds(2f);
+
         var i_sceneToLoad = (SceneManager.GetActiveScene().buildIndex + 1);
 
         if (i_sceneToLoad != SceneManager.sceneCountInBuildSettings)
-        {    
+        {
             SceneManager.LoadScene(i_sceneToLoad);
             print(SceneManager.sceneCountInBuildSettings);
         }
         else
         {
             print("Game Over!");
-
-            return;
-
         }
+    }
+
+    public void NextLevel()
+    {
+        rocketShip.moving = false;
+        print("Are we moving? " + rocketShip.moving);
+        StartCoroutine(LoadNexetLevel());
     }
 }

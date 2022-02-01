@@ -19,6 +19,7 @@ public class RocketShip : MonoBehaviour
     GameController gameController;
 
     public bool turnButtonOn;
+    public bool moving = true;
 
     // Start is called before the first frame update
     void Start()
@@ -32,12 +33,15 @@ public class RocketShip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RocketMovement();
+        if (moving)
+        {
+            RocketMovement();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log("Collided!");
+        if (!moving) { return; } // turn off any of the following collisions if we reached the end
 
         switch(collision.gameObject.tag)
         {
@@ -46,12 +50,11 @@ public class RocketShip : MonoBehaviour
                 break;
             case "Finish":
                 print("Success!");
+                myRigidBody.isKinematic = true;
+                moving = false; // make the player invincible
 
                 gameController.NextLevel();
 
-                break;
-            case "Fuel":
-                print("Fueled Up!");
                 break;
             case "Destructable":
                 print("Destroyed Something!");
@@ -96,8 +99,11 @@ public class RocketShip : MonoBehaviour
 
                 // Only disable Rocket
 
-                gameObject.SetActive(false);
-                gameController.RocketDestroyed();
+                if (moving) // make sure that we haven't reached the end of the level yet
+                {
+                    gameObject.SetActive(false);
+                    gameController.RocketDestroyed();
+                }
 
                 break;
         }

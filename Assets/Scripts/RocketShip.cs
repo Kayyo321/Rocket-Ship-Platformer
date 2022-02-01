@@ -23,6 +23,7 @@ public class RocketShip : MonoBehaviour
 
     public bool turnButtonOn;
     public bool moving = true;
+    public bool debug = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,33 @@ public class RocketShip : MonoBehaviour
         if (moving)
         {
             RocketMovement();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Backslash))
+        {
+            debug = !debug; // turns debug on to off, and off to on
+        }
+        else if (Input.GetKeyDown(KeyCode.RightBracket)) // Skip Level
+        {
+            if (!debug) { return; }
+
+            print("Skiping...");
+
+            myRigidBody.isKinematic = true;
+            moving = false; // make the player invincible
+
+            gameController.NextLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftBracket))
+        {
+            if (!debug) { return; }
+
+            print("Skiping...");
+
+            myRigidBody.isKinematic = true;
+            moving = false; // make the player invincible
+
+            gameController.LastLevel();
         }
     }
 
@@ -71,7 +99,8 @@ public class RocketShip : MonoBehaviour
 
                 explosionSound.PlaySound();
 
-                gameObject.SetActive(false);
+                if (!debug) { gameObject.SetActive(false); }
+                
                 gameController.RocketDestroyed();
                 collision.gameObject.SetActive(false);
 
@@ -109,7 +138,9 @@ public class RocketShip : MonoBehaviour
 
                 // Only disable Rocket
 
-                if (moving) // make sure that we haven't reached the end of the level yet
+                if (debug) { return; } // ignore if in debug mode
+
+                if (moving) // make sure that we haven't reached the end of the level yet, or if we're not in debug mode
                 {
                     explosion.transform.position = gameObject.transform.position;
                     explosion.Play();

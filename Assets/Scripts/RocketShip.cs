@@ -14,7 +14,7 @@ public class RocketShip : MonoBehaviour
     [SerializeField] GameObject button;
     [SerializeField] GameObject buttonReaction;
     [SerializeField] GameObject myCamera;
-    [SerializeField] GameObject cameraPositionTwo;
+    [SerializeField] GameObject r1, r2, r3;
     [SerializeField] ParticleSystem explosion;
     [SerializeField] ParticleSystem flames;
     #endregion
@@ -23,14 +23,22 @@ public class RocketShip : MonoBehaviour
     public bool turnButtonOn;
     public bool moving = true;
     public bool debug = false;
+    public bool currentPerspective = false; // false = first person, true = shelf perspective
     #endregion
 
+    #region Cameras
+    public Camera cameraPosition;
+    public Camera cameraPositionTwo;
+    #endregion
+
+    #region other
     Rigidbody myRigidBody;
 
     AudioSource myAudioSource;
     Audiomanager audioManager;
 
     GameController gameController;
+    #endregion
     #endregion
 
     // Start is called before the first frame update
@@ -42,6 +50,9 @@ public class RocketShip : MonoBehaviour
         audioManager = FindObjectOfType<Audiomanager>();
 
         gameController = FindObjectOfType<GameController>();
+
+        cameraPosition.enabled = true;
+        cameraPositionTwo.enabled = false;
     }
 
     // Update is called once per frame
@@ -77,6 +88,17 @@ public class RocketShip : MonoBehaviour
             moving = false; // make the player invincible
 
             gameController.LastLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.P) && r1.activeSelf) 
+        {
+            currentPerspective = !currentPerspective; 
+            changePerspective();  
+        }
+
+        if (!r1.activeSelf || !r2.activeSelf || !r3.activeSelf)
+        {
+            cameraPosition.enabled = false;
+            cameraPositionTwo.enabled = true;
         }
     }
 
@@ -142,8 +164,8 @@ public class RocketShip : MonoBehaviour
 
                 // change camera location
 
-                //myCamera.transform.position = cameraPositionTwo.transform.position;
-                //myCamera.transform.rotation = cameraPositionTwo.transform.rotation;
+                //mycamera.transform.position = camerapositiontwo.transform.position;
+                //mycamera.transform.rotation = camerapositiontwo.transform.rotation;
 
                 break;
             default:
@@ -161,7 +183,6 @@ public class RocketShip : MonoBehaviour
                     ParticleSystem newExplosion = explosion;
                     newExplosion.transform.position = pos;
                     newExplosion.Play();
-
 
                     audioManager.PlaySound("Explosion");
 
@@ -225,5 +246,11 @@ public class RocketShip : MonoBehaviour
         }
 
         myRigidBody.freezeRotation = false;
+    }
+
+    private void changePerspective()
+    {
+        cameraPosition.enabled = !cameraPosition.enabled;
+        cameraPositionTwo.enabled = !cameraPositionTwo.enabled;
     }
 }

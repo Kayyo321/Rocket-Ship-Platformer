@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Audiomanager : MonoBehaviour
 {
+    public RocketShip rocketShip, r2, r3;
     [SerializeField] AudioClip success, explosion;
 
     public AudioSource myAudioSource;
@@ -22,7 +23,12 @@ public class Audiomanager : MonoBehaviour
 
     public void PlaySound(string audio)
     {
-        if (audio == "Explosion") { AudioSource.PlayClipAtPoint(explosion, Camera.main.transform.position); }
+        if (audio == "Explosion") 
+        {
+            if (rocketShip.currentPerspective || r2.currentPerspective || r3.currentPerspective)
+                AudioSource.PlayClipAtPoint(explosion, rocketShip.cameraPosition.transform.position); 
+            else { AudioSource.PlayClipAtPoint(explosion, rocketShip.cameraPositionTwo.transform.position); }
+        }
         else if (audio == "Success") { AudioSource.PlayClipAtPoint(success, Camera.main.transform.position); }
     }
 }

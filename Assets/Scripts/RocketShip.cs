@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RocketShip : MonoBehaviour
 {
+
+    #region Parameters
+    #region Serialized Fields
     [SerializeField] float mainThrust = 2.35f;
     [SerializeField] float rotationalThrust = 0.75f;
     [SerializeField] GameObject TeleportTo;
@@ -14,6 +17,13 @@ public class RocketShip : MonoBehaviour
     [SerializeField] GameObject cameraPositionTwo;
     [SerializeField] ParticleSystem explosion;
     [SerializeField] ParticleSystem flames;
+    #endregion
+
+    #region Booleans
+    public bool turnButtonOn;
+    public bool moving = true;
+    public bool debug = false;
+    #endregion
 
     Rigidbody myRigidBody;
 
@@ -21,10 +31,7 @@ public class RocketShip : MonoBehaviour
     Audiomanager audioManager;
 
     GameController gameController;
-
-    public bool turnButtonOn;
-    public bool moving = true;
-    public bool debug = false;
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -133,8 +140,10 @@ public class RocketShip : MonoBehaviour
                 button.SetActive(false);
                 buttonReaction.SetActive(false);
 
-                myCamera.transform.position = cameraPositionTwo.transform.position;
-                myCamera.transform.rotation = cameraPositionTwo.transform.rotation;
+                // change camera location
+
+                //myCamera.transform.position = cameraPositionTwo.transform.position;
+                //myCamera.transform.rotation = cameraPositionTwo.transform.rotation;
 
                 break;
             default:

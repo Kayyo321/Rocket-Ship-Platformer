@@ -13,6 +13,7 @@ public class RocketShip : MonoBehaviour
     [SerializeField] GameObject myCamera;
     [SerializeField] GameObject cameraPositionTwo;
     [SerializeField] ParticleSystem explosion;
+    [SerializeField] ParticleSystem flames;
 
     Rigidbody myRigidBody;
 
@@ -145,9 +146,13 @@ public class RocketShip : MonoBehaviour
 
                 if (moving) // make sure that we haven't reached the end of the level yet, or if we're not in debug mode
                 {
+                    ContactPoint contact = collision.GetContact(0);
+                    Vector3 pos = contact.point;
+
                     ParticleSystem newExplosion = explosion;
-                    newExplosion.transform.position = gameObject.transform.position;
+                    newExplosion.transform.position = pos;
                     newExplosion.Play();
+
 
                     audioManager.PlaySound("Explosion");
 
@@ -170,10 +175,12 @@ public class RocketShip : MonoBehaviour
         {
             if (!myAudioSource.isPlaying) { myAudioSource.Play(); }
 
+            flames.Play();
             MovementControls("up");
         }
         else
         {
+            flames.Stop();
             if (myAudioSource.isPlaying) { myAudioSource.Stop(); }
         }
 

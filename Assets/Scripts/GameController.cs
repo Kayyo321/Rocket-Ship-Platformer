@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
 
     public void ResetGame()
     {
+        StopAllCoroutines();
+
         StartCoroutine(LoadFirstLevel());
     }
 
@@ -23,7 +25,6 @@ public class GameController : MonoBehaviour
             ResetGame();
         }
     }
-
 
     public IEnumerator LoadFirstLevel()
     {
@@ -45,6 +46,7 @@ public class GameController : MonoBehaviour
         else
         {
             print("Game Over!");
+            ResetGame();
         }
     }
 
@@ -68,11 +70,13 @@ public class GameController : MonoBehaviour
 
     public void NextLevel()
     {
+        StopAllCoroutines();
         StartCoroutine(LoadNextLevel());
     }
 
     public void LastLevel()
     {
+        StopAllCoroutines();
         StartCoroutine(LoadLastLevel());
     }
 

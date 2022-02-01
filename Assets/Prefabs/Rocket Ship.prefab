@@ -14961,6 +14961,7 @@ MonoBehaviour:
   explosion: {fileID: 0}
   turnButtonOn: 0
   moving: 1
+  debug: 0
 --- !u!82 &9062315668253064272
 AudioSource:
   m_ObjectHideFlags: 0

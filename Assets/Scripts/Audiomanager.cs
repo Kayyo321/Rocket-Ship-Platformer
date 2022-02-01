@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Audiomanager : MonoBehaviour
 {
+    [SerializeField] AudioClip success;
+
     AudioSource myAudioSource;
 
     // Start is called before the first frame update
@@ -18,8 +20,9 @@ public class Audiomanager : MonoBehaviour
         
     }
 
-    public void PlaySound()
+    public void PlaySound(string audio)
     {
-        myAudioSource.Play();
+        if (audio == "Explosion") { myAudioSource.Play(); }
+        else if (audio == "Success") { myAudioSource.PlayOneShot(success); }
     }
 }

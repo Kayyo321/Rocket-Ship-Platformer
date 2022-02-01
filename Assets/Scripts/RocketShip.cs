@@ -17,7 +17,7 @@ public class RocketShip : MonoBehaviour
     Rigidbody myRigidBody;
 
     AudioSource myAudioSource;
-    Audiomanager explosionSound;
+    Audiomanager audioManager;
 
     GameController gameController;
 
@@ -31,7 +31,7 @@ public class RocketShip : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody>();
         myAudioSource = GetComponent<AudioSource>();
 
-        explosionSound = FindObjectOfType<Audiomanager>();
+        audioManager = FindObjectOfType<Audiomanager>();
 
         gameController = FindObjectOfType<GameController>();
     }
@@ -86,6 +86,8 @@ public class RocketShip : MonoBehaviour
                 myRigidBody.isKinematic = true;
                 moving = false; // make the player invincible
 
+                audioManager.PlaySound("Success");
+
                 gameController.NextLevel();
 
                 break;
@@ -94,10 +96,11 @@ public class RocketShip : MonoBehaviour
 
                 // Disable Rocket, and Object collided with
 
-                explosion.transform.position = gameObject.transform.position;
-                explosion.Play();
+                ParticleSystem TempExplosion = explosion;
+                TempExplosion.transform.position = gameObject.transform.position;
+                TempExplosion.Play();
 
-                explosionSound.PlaySound();
+                audioManager.PlaySound("Explosion");
 
                 if (!debug) { gameObject.SetActive(false); }
                 
@@ -142,10 +145,11 @@ public class RocketShip : MonoBehaviour
 
                 if (moving) // make sure that we haven't reached the end of the level yet, or if we're not in debug mode
                 {
-                    explosion.transform.position = gameObject.transform.position;
-                    explosion.Play();
+                    ParticleSystem newExplosion = explosion;
+                    newExplosion.transform.position = gameObject.transform.position;
+                    newExplosion.Play();
 
-                    explosionSound.PlaySound();
+                    audioManager.PlaySound("Explosion");
 
                     gameObject.SetActive(false);
                     gameController.RocketDestroyed();

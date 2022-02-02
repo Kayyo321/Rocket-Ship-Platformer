@@ -79,9 +79,4 @@ public class GameController : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(LoadLastLevel());
     }
-
-    private void Update()
-    {
-        // Debug Controls
-    }
 }

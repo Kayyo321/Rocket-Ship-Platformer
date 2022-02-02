@@ -51,8 +51,8 @@ public class RocketShip : MonoBehaviour
 
         gameController = FindObjectOfType<GameController>();
 
-        cameraPosition.enabled = true;
-        cameraPositionTwo.enabled = false;
+        cameraPosition.enabled = false;
+        cameraPositionTwo.enabled = true;
     }
 
     // Update is called once per frame
@@ -88,17 +88,6 @@ public class RocketShip : MonoBehaviour
             moving = false; // make the player invincible
 
             gameController.LastLevel();
-        }
-        else if (Input.GetKeyDown(KeyCode.P) && r1.activeSelf) 
-        {
-            currentPerspective = !currentPerspective; 
-            changePerspective();  
-        }
-
-        if (!r1.activeSelf || !r2.activeSelf || !r3.activeSelf)
-        {
-            cameraPosition.enabled = false;
-            cameraPositionTwo.enabled = true;
         }
     }
 
@@ -188,6 +177,7 @@ public class RocketShip : MonoBehaviour
 
                     gameObject.SetActive(false);
                     gameController.RocketDestroyed();
+
                 }
 
                 break;

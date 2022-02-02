@@ -1055,6 +1055,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3514754578733001843, guid: 4e134b6fab1a8524e96794752d2739f8, type: 3}
+      propertyPath: Body
+      value: 
+      objectReference: {fileID: 5367123779486137734, guid: 2430eb39cf8c0e5448a85c1fb3ceefc4, type: 3}
+    - target: {fileID: 3514754578733001843, guid: 4e134b6fab1a8524e96794752d2739f8, type: 3}
+      propertyPath: LegLeft
+      value: 
+      objectReference: {fileID: 1567990390068415278, guid: 3e650c30998d5ad43baf9fdf8e295a75, type: 3}
+    - target: {fileID: 3514754578733001843, guid: 4e134b6fab1a8524e96794752d2739f8, type: 3}
+      propertyPath: NoseTop
+      value: 
+      objectReference: {fileID: 3629352849994519847, guid: 4d9bfa6b3324f14449e265307eda1425, type: 3}
+    - target: {fileID: 3514754578733001843, guid: 4e134b6fab1a8524e96794752d2739f8, type: 3}
+      propertyPath: LegRight
+      value: 
+      objectReference: {fileID: 8179181982807693284, guid: b19286ae4d3ad9d41b6dca7f81f2330c, type: 3}
+    - target: {fileID: 3514754578733001843, guid: 4e134b6fab1a8524e96794752d2739f8, type: 3}
+      propertyPath: NoseBottom
+      value: 
+      objectReference: {fileID: 3158730130830145182, guid: 224e009297ec3a444b58f73d0c2a6319, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e134b6fab1a8524e96794752d2739f8, type: 3}
 --- !u!1001 &1134958395

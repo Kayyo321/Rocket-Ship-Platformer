@@ -23,12 +23,7 @@ public class Audiomanager : MonoBehaviour
 
     public void PlaySound(string audio)
     {
-        if (audio == "Explosion") 
-        {
-            if (rocketShip.currentPerspective || r2.currentPerspective || r3.currentPerspective)
-                AudioSource.PlayClipAtPoint(explosion, rocketShip.cameraPosition.transform.position); 
-            else { AudioSource.PlayClipAtPoint(explosion, rocketShip.cameraPositionTwo.transform.position); }
-        }
-        else if (audio == "Success") { AudioSource.PlayClipAtPoint(success, Camera.main.transform.position); }
+        if (audio == "Explosion") { myAudioSource.PlayOneShot(explosion); }
+        else if (audio == "Success") { myAudioSource.PlayOneShot(success); }
     }
 }

@@ -9,6 +9,7 @@ public class RocketShip : MonoBehaviour
     #region Serialized Fields
     [SerializeField] float mainThrust = 2.35f;
     [SerializeField] float rotationalThrust = 0.75f;
+    [SerializeField] int maxHealth = 100;
     [SerializeField] GameObject TeleportTo;
     [SerializeField] GameObject secondTeleportTo;
     [SerializeField] GameObject button;
@@ -17,6 +18,7 @@ public class RocketShip : MonoBehaviour
     [SerializeField] GameObject r1, r2, r3;
     [SerializeField] ParticleSystem explosion;
     [SerializeField] ParticleSystem flames;
+    [SerializeField] HealthBar myHealthBar;
     #endregion
 
     #region Booleans
@@ -32,6 +34,8 @@ public class RocketShip : MonoBehaviour
     #endregion
 
     #region other
+    int currentHealth;
+
     Rigidbody myRigidBody;
 
     AudioSource myAudioSource;
@@ -53,6 +57,9 @@ public class RocketShip : MonoBehaviour
 
         cameraPosition.enabled = false;
         cameraPositionTwo.enabled = true;
+
+        currentHealth = maxHealth;
+        myHealthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -89,6 +96,18 @@ public class RocketShip : MonoBehaviour
 
             gameController.LastLevel();
         }
+
+        if (Input.GetKeyDown(KeyCode.M) && debug)
+        {
+            TakeDamage(30);
+        }
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        myHealthBar.SetHealth(currentHealth);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -122,7 +141,11 @@ public class RocketShip : MonoBehaviour
                 audioManager.PlaySound("Explosion");
 
                 if (!debug) { gameObject.SetActive(false); }
-                
+
+                TakeDamage(30);
+
+                if (currentHealth > 0) { break; }
+
                 gameController.RocketDestroyed();
                 collision.gameObject.SetActive(false);
 
@@ -175,9 +198,12 @@ public class RocketShip : MonoBehaviour
 
                     audioManager.PlaySound("Explosion");
 
+                    TakeDamage(30);
+
+                    if (currentHealth > 0) { break; }
+
                     gameObject.SetActive(false);
                     gameController.RocketDestroyed();
-
                 }
 
                 break;

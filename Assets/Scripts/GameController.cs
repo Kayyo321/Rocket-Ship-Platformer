@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public RocketShip rocketShip;
+    public LvlSix levelSix;
 
     public void ResetGame()
     {
@@ -78,5 +79,16 @@ public class GameController : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(LoadLastLevel());
+    }
+
+    private void Update()
+    {
+        if (!levelSix.main.activeSelf)
+        {
+            SceneManager.LoadScene(0);
+
+            print("Main Rocket Down!");
+        }
+        else { return; }
     }
 }

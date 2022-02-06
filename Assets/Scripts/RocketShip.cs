@@ -140,14 +140,14 @@ public class RocketShip : MonoBehaviour
 
                 audioManager.PlaySound("Explosion");
 
-                if (!debug) { gameObject.SetActive(false); }
-
                 TakeDamage(30);
 
+                collision.gameObject.SetActive(false);
+
                 if (currentHealth > 0) { break; }
+                if (!debug) { gameObject.SetActive(false); }
 
                 gameController.RocketDestroyed();
-                collision.gameObject.SetActive(false);
 
                 break;
             case "Teleporter":

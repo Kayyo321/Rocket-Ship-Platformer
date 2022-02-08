@@ -20,6 +20,8 @@ public class RocketShip : MonoBehaviour
     [SerializeField] ParticleSystem flames;
     [SerializeField] HealthBar myHealthBar;
     #endregion
+    
+    ShakeCam shakeCamera;
 
     #region Booleans
     public bool turnButtonOn;
@@ -48,6 +50,8 @@ public class RocketShip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shakeCamera = FindObjectOfType<ShakeCam>();
+
         myRigidBody = GetComponent<Rigidbody>();
         myAudioSource = GetComponent<AudioSource>();
 
@@ -108,6 +112,8 @@ public class RocketShip : MonoBehaviour
         currentHealth -= damage;
 
         myHealthBar.SetHealth(currentHealth);
+
+        shakeCamera.ShakeCamera(CamShakeType.ROCKET_DAMAGE);
     }
 
     private void OnCollisionEnter(Collision collision)

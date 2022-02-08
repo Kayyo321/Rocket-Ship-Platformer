@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     public RocketShip rocketShip;
     public LvlSix levelSix;
 
+    [SerializeField] ShakeCam shakeCamera;
+
     public void ResetGame()
     {
         StopAllCoroutines();
@@ -19,6 +21,8 @@ public class GameController : MonoBehaviour
     {
         print("GameController.RocketDestroyed Executing...");
         print(FindObjectOfType<RocketShip>());
+
+        shakeCamera.ShakeCamera(CamShakeType.ROCKET_EXPLODE);
 
         if (FindObjectOfType<RocketShip>() == null)
         {
@@ -85,9 +89,7 @@ public class GameController : MonoBehaviour
     {
         if (!levelSix.main.activeSelf)
         {
-            SceneManager.LoadScene(0);
-
-            print("Main Rocket Down!");
+            
         }
         else { return; }
     }

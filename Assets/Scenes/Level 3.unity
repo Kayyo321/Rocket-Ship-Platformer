@@ -603,6 +603,10 @@ PrefabInstance:
       value: 15000
       objectReference: {fileID: 0}
     - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
+      propertyPath: myHealthBar
+      value: 
+      objectReference: {fileID: 798529714}
+    - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
       propertyPath: cameraPosition
       value: 
       objectReference: {fileID: 487463122}
@@ -730,6 +734,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &798529714 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3277393571605284581, guid: 25284b72017de6b4bae573d833b86ff0, type: 3}
+  m_PrefabInstance: {fileID: 1298349557}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f415fef43714d74398527c512d74798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &938059074 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1784921371920034126, guid: c0c58834ab60b084ca098a343adcaf76, type: 3}
@@ -1059,6 +1074,10 @@ PrefabInstance:
       propertyPath: mainThrust
       value: 15000
       objectReference: {fileID: 0}
+    - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
+      propertyPath: myHealthBar
+      value: 
+      objectReference: {fileID: 1586985918}
     - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
       propertyPath: cameraPosition
       value: 
@@ -1775,6 +1794,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0c58834ab60b084ca098a343adcaf76, type: 3}
+--- !u!114 &1586985918 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3277393570857070442, guid: 25284b72017de6b4bae573d833b86ff0, type: 3}
+  m_PrefabInstance: {fileID: 1298349557}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f415fef43714d74398527c512d74798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1592507925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1784921371920034126, guid: c0c58834ab60b084ca098a343adcaf76, type: 3}
@@ -2264,6 +2294,10 @@ PrefabInstance:
       propertyPath: TeleportTo
       value: 
       objectReference: {fileID: 1382566420}
+    - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
+      propertyPath: myHealthBar
+      value: 
+      objectReference: {fileID: 798529714}
     - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
       propertyPath: cameraPosition
       value: 

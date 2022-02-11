@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 1cb03390b3e2448438a11c7a5212e1cb, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 8c16b8a830536984384a1eb372d6b91b, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -293,24 +293,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 562831255, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.9909248
+      objectReference: {fileID: 0}
+    - target: {fileID: 562831255, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 37.92
+      value: -1.5440254
       objectReference: {fileID: 0}
     - target: {fileID: 562831255, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -29.15
+      value: 16.770414
       objectReference: {fileID: 0}
     - target: {fileID: 562831255, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9723027
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 562831255, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.23372544
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 562831255, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 562831255, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
       propertyPath: m_LocalRotation.z
@@ -340,6 +344,18 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1120216122}
+    - target: {fileID: 2864692560868661478, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.9909248
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864692560868661478, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5440254
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864692560868661478, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 16.770414
+      objectReference: {fileID: 0}
     - target: {fileID: 2864692561280127885, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -1574,17 +1590,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25284b72017de6b4bae573d833b86ff0, type: 3}
---- !u!114 &1576061632 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3277393571605284581, guid: 25284b72017de6b4bae573d833b86ff0, type: 3}
-  m_PrefabInstance: {fileID: 1576061631}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f415fef43714d74398527c512d74798, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1592507925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1784921371920034126, guid: c0c58834ab60b084ca098a343adcaf76, type: 3}
@@ -2213,7 +2218,7 @@ PrefabInstance:
     - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
       propertyPath: myHealthBar
       value: 
-      objectReference: {fileID: 1576061632}
+      objectReference: {fileID: 0}
     - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
       propertyPath: cameraPosition
       value: 

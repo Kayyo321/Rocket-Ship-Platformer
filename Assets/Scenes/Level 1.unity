@@ -368,6 +368,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 927434386093223301, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 927434386093223301, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2424428360760684198, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
       propertyPath: m_Name
       value: Rocket Ship (2)
@@ -659,6 +667,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 927434386093223301, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 927434386093223301, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2424428360760684198, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
       propertyPath: m_Name
       value: Rocket Ship (1)
@@ -712,10 +728,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1559597799}
     - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
-      propertyPath: r2
-      value: 
-      objectReference: {fileID: 1016304125}
-    - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
       propertyPath: r3
       value: 
       objectReference: {fileID: 1569122153}
@@ -727,10 +739,6 @@ PrefabInstance:
       propertyPath: explosion
       value: 
       objectReference: {fileID: 7969882161597690423}
-    - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
-      propertyPath: mainRocket
-      value: 
-      objectReference: {fileID: 1016304125}
     - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
       propertyPath: cameraPosition
       value: 
@@ -1468,6 +1476,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1784921371920034126, guid: c0c58834ab60b084ca098a343adcaf76, type: 3}
   m_PrefabInstance: {fileID: 1970382595}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2098841725 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 381827558, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
+  m_PrefabInstance: {fileID: 331702443}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e585474eae686c145bceb53b1f9155da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &684394885031357576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1811,6 +1830,10 @@ PrefabInstance:
       propertyPath: rocketShip
       value: 
       objectReference: {fileID: 1894083754}
+    - target: {fileID: 3514754578733001843, guid: 4e134b6fab1a8524e96794752d2739f8, type: 3}
+      propertyPath: shakeCamera
+      value: 
+      objectReference: {fileID: 2098841725}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e134b6fab1a8524e96794752d2739f8, type: 3}
 --- !u!1001 &3636647062144291780

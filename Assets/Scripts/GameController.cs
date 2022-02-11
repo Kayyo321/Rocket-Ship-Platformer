@@ -89,7 +89,7 @@ public class GameController : MonoBehaviour
     {
         if (!levelSix.main.activeSelf)
         {
-            
+            StartCoroutine(LoadFirstLevel());
         }
         else { return; }
     }

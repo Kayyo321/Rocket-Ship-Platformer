@@ -14677,13 +14677,12 @@ MonoBehaviour:
   button: {fileID: 0}
   buttonReaction: {fileID: 0}
   myCamera: {fileID: 0}
-  r1: {fileID: 2424428360760684198}
-  r2: {fileID: 0}
+  r1: {fileID: 0}
+  r2: {fileID: 2424428360760684198}
   r3: {fileID: 0}
   explosion: {fileID: 0}
   flames: {fileID: 7414522969213852974}
   myHealthBar: {fileID: 927434387219916113}
-  shakeCamera: {fileID: 0}
   turnButtonOn: 0
   moving: 1
   debug: 0

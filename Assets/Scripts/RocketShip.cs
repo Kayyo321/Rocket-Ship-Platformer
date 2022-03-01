@@ -138,22 +138,8 @@ public class RocketShip : MonoBehaviour
             case "Destructable":
                 print("Destroyed Something!");
 
-                // Disable Rocket, and Object collided with
-
-                ParticleSystem TempExplosion = Instantiate(explosion);
-                TempExplosion.transform.position = gameObject.transform.position;
-                TempExplosion.Play();
-
-                audioManager.PlaySound("Explosion");
-
-                TakeDamage(30);
-
+                collisionsHandeling(collision);
                 collision.gameObject.SetActive(false);
-
-                if (currentHealth > 0) { break; }
-                if (!debug) { gameObject.SetActive(false); }
-
-                gameController.RocketDestroyed();
 
                 break;
             case "Teleporter":
@@ -180,42 +166,36 @@ public class RocketShip : MonoBehaviour
                 button.SetActive(false);
                 buttonReaction.SetActive(false);
 
-                // change camera location
-
-                //mycamera.transform.position = camerapositiontwo.transform.position;
-                //mycamera.transform.rotation = camerapositiontwo.transform.rotation;
-
                 break;
             default:
-                print("Died!");
-
-                // Only disable Rocket
-
-                if (debug) { return; } // ignore if in debug mode
+                print("Hit something!");
 
                 if (moving) // make sure that we haven't reached the end of the level yet, or if we're not in debug mode
                 {
-                    ContactPoint contact = collision.GetContact(0);
-                    Vector3 pos = contact.point;
-
-                    ParticleSystem newExplosion = Instantiate(explosion);
-                    newExplosion.transform.position = pos;
-                    newExplosion.Play();
-
-                    audioManager.PlaySound("Explosion");
-
-                    TakeDamage(30);
-
-                    if (currentHealth > 0) { break; }
-
-                    gameObject.SetActive(false);
-                    gameController.RocketDestroyed();
+                    collisionsHandeling(collision);
                 }
 
                 break;
         }
     }
 
+    private void collisionsHandeling(Collision collision)
+    {
+        ParticleSystem TempExplosion = Instantiate(explosion);
+        TempExplosion.transform.position = gameObject.transform.position;
+        TempExplosion.Play();
+
+        audioManager.PlaySound("Explosion");
+
+        if (!debug)
+            TakeDamage(30);
+
+        if (currentHealth > 0) { return; }
+        
+        gameObject.SetActive(false);
+        gameController.RocketDestroyed();
+
+    }
     private void LateUpdate()
     {
         transform.localEulerAngles = new Vector3(0, 0, transform.localEulerAngles.z);

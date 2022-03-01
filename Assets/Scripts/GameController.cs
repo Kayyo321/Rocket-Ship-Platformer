@@ -92,9 +92,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (levelSix == null) return;
-
-        if (!levelSix.main.activeSelf)
+        if (!rocketShip.isActiveAndEnabled)
         {
             StartCoroutine(LoadFirstLevel());
         }

@@ -44,5 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketShip: {fileID: 0}
-  levelSix: {fileID: 0}
   shakeCamera: {fileID: 0}

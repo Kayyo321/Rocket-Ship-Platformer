@@ -6,9 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public RocketShip rocketShip;
-    public LvlSix levelSix;
-
     [SerializeField] ShakeCam shakeCamera;
+    
+    LvlSix levelSix;
+
+    private void Start()
+    {
+        levelSix = FindObjectOfType<LvlSix>();
+    }
 
     public void ResetGame()
     {
@@ -87,6 +92,8 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
+        if (levelSix == null) return;
+
         if (!levelSix.main.activeSelf)
         {
             StartCoroutine(LoadFirstLevel());

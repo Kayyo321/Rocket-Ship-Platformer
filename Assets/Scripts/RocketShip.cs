@@ -140,7 +140,7 @@ public class RocketShip : MonoBehaviour
 
                 // Disable Rocket, and Object collided with
 
-                ParticleSystem TempExplosion = explosion;
+                ParticleSystem TempExplosion = Instantiate(explosion);
                 TempExplosion.transform.position = gameObject.transform.position;
                 TempExplosion.Play();
 
@@ -198,7 +198,7 @@ public class RocketShip : MonoBehaviour
                     ContactPoint contact = collision.GetContact(0);
                     Vector3 pos = contact.point;
 
-                    ParticleSystem newExplosion = explosion;
+                    ParticleSystem newExplosion = Instantiate(explosion);
                     newExplosion.transform.position = pos;
                     newExplosion.Play();
 

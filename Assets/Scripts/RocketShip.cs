@@ -10,8 +10,6 @@ public class RocketShip : MonoBehaviour
     [SerializeField] float mainThrust = 2.35f;
     [SerializeField] float rotationalThrust = 0.75f;
     [SerializeField] int maxHealth = 100;
-    [SerializeField] GameObject TeleportTo;
-    [SerializeField] GameObject secondTeleportTo;
     [SerializeField] GameObject button;
     [SerializeField] GameObject buttonReaction;
     [SerializeField] GameObject myCamera;
@@ -123,7 +121,9 @@ public class RocketShip : MonoBehaviour
         switch(collision.gameObject.tag)
         {
             case "Friendly":
+            case "Player":
                 print("I'm Okay!");
+                
                 break;
             case "Finish":
                 print("Success!");
@@ -145,26 +145,23 @@ public class RocketShip : MonoBehaviour
             case "Teleporter":
                 print("Teleporting... Keep your arms inside the attraction please");
 
-                transform.position = TeleportTo.transform.position;
-                TeleportTo.gameObject.SetActive(false);
+                Teleporter t = collision.gameObject.GetComponent<Teleporter>();
 
-                break;
-            case "SecondTeleporter":
-                
-                if (!turnButtonOn)
-                { 
-                    button.SetActive(true);
-                    turnButtonOn = !turnButtonOn;
+                if (t != null)
+                {
+                    transform.position = t.GetTeleportDestination();
                 }
 
-                transform.position = secondTeleportTo.transform.position;
-                secondTeleportTo.gameObject.SetActive(false);
 
                 break;
             case "Button":
 
-                button.SetActive(false);
-                buttonReaction.SetActive(false);
+                ButtonWall btn = collision.gameObject.GetComponent<ButtonWall>();
+
+                if (btn != null)
+                {
+                    btn.Pressed();
+                }
 
                 break;
             default:

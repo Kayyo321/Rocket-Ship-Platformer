@@ -546,6 +546,22 @@ PrefabInstance:
       propertyPath: cameraPositionTwo
       value: 
       objectReference: {fileID: 1403494920}
+    - target: {fileID: 4868379038287681202, guid: 6f1ba42309de39f4fb93ca06964039c8, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868379038287681202, guid: 6f1ba42309de39f4fb93ca06964039c8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868379039719830340, guid: 6f1ba42309de39f4fb93ca06964039c8, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868379039719830340, guid: 6f1ba42309de39f4fb93ca06964039c8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5715380567207391148, guid: 6f1ba42309de39f4fb93ca06964039c8, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -593,6 +609,18 @@ PrefabInstance:
     - target: {fileID: 5715380567207391151, guid: 6f1ba42309de39f4fb93ca06964039c8, type: 3}
       propertyPath: m_Name
       value: RocketShips
+      objectReference: {fileID: 0}
+    - target: {fileID: 7073668812212203371, guid: 6f1ba42309de39f4fb93ca06964039c8, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7073668812212203371, guid: 6f1ba42309de39f4fb93ca06964039c8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995104194712049041, guid: 6f1ba42309de39f4fb93ca06964039c8, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f1ba42309de39f4fb93ca06964039c8, type: 3}

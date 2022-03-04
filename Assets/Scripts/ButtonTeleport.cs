@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button : MonoBehaviour
+public class ButtonTelerport : MonoBehaviour
 {
     public float time = 5.0f;
     public float maxInterval = 1.2f;

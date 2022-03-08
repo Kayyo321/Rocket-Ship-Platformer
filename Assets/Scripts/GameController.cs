@@ -8,12 +8,9 @@ public class GameController : MonoBehaviour
     [SerializeField] ShakeCam shakeCamera;
     
     RocketShip rocketShip;
-    LvlSix levelSix;
 
     private void Start()
     {
-        levelSix = FindObjectOfType<LvlSix>();
-
         rocketShip = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<RocketShip>();
 
         Debug.Assert(rocketShip != null);

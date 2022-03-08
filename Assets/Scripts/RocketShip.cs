@@ -10,28 +10,17 @@ public class RocketShip : MonoBehaviour
     [SerializeField] float mainThrust = 2.35f;
     [SerializeField] float rotationalThrust = 0.75f;
     [SerializeField] int maxHealth = 100;
-    [SerializeField] GameObject button;
-    [SerializeField] GameObject buttonReaction;
-    [SerializeField] GameObject myCamera;
-    [SerializeField] GameObject r1, r2, r3;
     [SerializeField] ParticleSystem explosion;
     [SerializeField] ParticleSystem flames;
     [SerializeField] HealthBar myHealthBar;
     #endregion
-    
-    ShakeCam shakeCamera;
 
     #region Booleans
-    public bool turnButtonOn;
     public bool moving = true;
     public bool debug = false;
-    public bool currentPerspective = false; // false = first person, true = shelf perspective
     #endregion
-
-    #region Cameras
-    public Camera cameraPosition;
-    public Camera cameraPositionTwo;
-    #endregion
+    
+    ShakeCam shakeCamera;
 
     #region other
     int currentHealth;
@@ -56,9 +45,6 @@ public class RocketShip : MonoBehaviour
         audioManager = FindObjectOfType<Audiomanager>();
 
         gameController = FindObjectOfType<GameController>();
-
-        cameraPosition.enabled = false;
-        cameraPositionTwo.enabled = true;
 
         currentHealth = maxHealth;
         myHealthBar.SetMaxHealth(maxHealth);
@@ -245,11 +231,5 @@ public class RocketShip : MonoBehaviour
         }
 
         myRigidBody.freezeRotation = false;
-    }
-
-    private void changePerspective()
-    {
-        cameraPosition.enabled = !cameraPosition.enabled;
-        cameraPositionTwo.enabled = !cameraPositionTwo.enabled;
     }
 }

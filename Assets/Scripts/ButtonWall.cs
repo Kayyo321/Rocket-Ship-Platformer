@@ -11,13 +11,6 @@ public class ButtonWall : MonoBehaviour
     {
         Debug.Assert(Wall != null);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Pressed()
     {
         Destroy(Wall);

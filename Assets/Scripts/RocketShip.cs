@@ -103,10 +103,6 @@ public class RocketShip : MonoBehaviour
                 print("I'm Okay!");
                 
                 break;
-            //case "Finish":
-            //    LandedOnLegs();
-                
-            //    break;
             case "Destructable":
                 print("Destroyed Something!");
 

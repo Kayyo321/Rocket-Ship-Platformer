@@ -130,14 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 562831255, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.792656
-      objectReference: {fileID: 0}
-    - target: {fileID: 562831255, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.4573288
-      objectReference: {fileID: 0}
     - target: {fileID: 2864692560868661473, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
       propertyPath: m_Follow
       value: 
@@ -146,14 +138,6 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 404725516}
-    - target: {fileID: 2864692560868661478, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.792656
-      objectReference: {fileID: 0}
-    - target: {fileID: 2864692560868661478, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.4573288
-      objectReference: {fileID: 0}
     - target: {fileID: 2864692561280127885, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -273,6 +257,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1468612039826472590, guid: 0976583107b575043a8ccf58d49abcc6, type: 3}
+      propertyPath: m_Intensity
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1468612040565765825, guid: 0976583107b575043a8ccf58d49abcc6, type: 3}
       propertyPath: m_Name
       value: Lights Lvl 4

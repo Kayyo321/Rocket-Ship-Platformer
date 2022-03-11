@@ -17,7 +17,6 @@ public class RocketShip : MonoBehaviour
 
     #region Booleans
     public bool moving = true;
-    public bool debug = false;
     #endregion
     
     ShakeCam shakeCamera;
@@ -58,37 +57,30 @@ public class RocketShip : MonoBehaviour
             RocketMovement();
         }
 
-        if (Input.GetKeyDown(KeyCode.Backslash))
+        if (Input.GetKeyDown(KeyCode.RightBracket)) // Skip Level
         {
-            debug = !debug; // turns debug on to off, and off to on
-        }
-        else if (Input.GetKeyDown(KeyCode.RightBracket)) // Skip Level
-        {
-            if (!debug) { return; }
-
-            print("Skiping...");
+            if (!gameController.debug) { return; }
 
             myRigidBody.isKinematic = true;
             moving = false; // make the player invincible
-
-            gameController.NextLevel();
         }
-        else if (Input.GetKeyDown(KeyCode.LeftBracket))
+       
+        if (Input.GetKeyDown(KeyCode.LeftBracket))
         {
-            if (!debug) { return; }
-
-            print("Skiping...");
+            if (!gameController.debug) { return; }
 
             myRigidBody.isKinematic = true;
             moving = false; // make the player invincible
-
-            gameController.LastLevel();
         }
-
-        if (Input.GetKeyDown(KeyCode.M) && debug)
+        if (Input.GetKeyDown(KeyCode.M) && gameController.debug)
         {
             TakeDamage(30);
         }
+    }
+
+    private void LateUpdate()
+    {
+        transform.localEulerAngles = new Vector3(0, 0, transform.localEulerAngles.z);
     }
 
     void TakeDamage(int damage)
@@ -111,16 +103,10 @@ public class RocketShip : MonoBehaviour
                 print("I'm Okay!");
                 
                 break;
-            case "Finish":
-                print("Success!");
-                myRigidBody.isKinematic = true;
-                moving = false; // make the player invincible
-
-                audioManager.PlaySound("Success");
-
-                gameController.NextLevel();
-
-                break;
+            //case "Finish":
+            //    LandedOnLegs();
+                
+            //    break;
             case "Destructable":
                 print("Destroyed Something!");
 
@@ -170,18 +156,25 @@ public class RocketShip : MonoBehaviour
 
         audioManager.PlaySound("Explosion");
 
-        if (!debug)
+        if (!gameController.debug)
             TakeDamage(30);
 
         if (currentHealth > 0) { return; }
-        
+
         gameObject.SetActive(false);
         gameController.RocketDestroyed();
 
     }
-    private void LateUpdate()
+
+    public void LandedOnLegs()
     {
-        transform.localEulerAngles = new Vector3(0, 0, transform.localEulerAngles.z);
+        print("Success!");
+        myRigidBody.isKinematic = true;
+        moving = false; // make the player invincible
+
+        audioManager.PlaySound("Success");
+
+        gameController.RocketLandedOnLandingPad();
     }
 
     private void RocketMovement()

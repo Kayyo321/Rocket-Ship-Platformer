@@ -10,6 +10,7 @@ TagManager:
   - Teleporter
   - SecondTeleporter
   - Button
+  - CameraFollow
   layers:
   - Default
   - TransparentFX

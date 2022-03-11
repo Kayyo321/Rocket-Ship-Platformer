@@ -6,11 +6,15 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [SerializeField] ShakeCam shakeCamera;
-    
+
+    public bool debug;
+
     RocketShip rocketShip;
 
     private void Start()
     {
+        debug = false;
+
         rocketShip = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<RocketShip>();
 
         Debug.Assert(rocketShip != null);
@@ -37,13 +41,18 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public IEnumerator LoadFirstLevel()
+    public void RocketLandedOnLandingPad()
+    {
+        NextLevel();
+    }
+
+    private IEnumerator LoadFirstLevel()
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(0);
     }
 
-    public IEnumerator LoadNextLevel()
+    private IEnumerator LoadNextLevel()
     {
         yield return new WaitForSeconds(2f);
 
@@ -61,7 +70,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public IEnumerator LoadLastLevel()
+    private IEnumerator LoadLastLevel()
     {
         yield return new WaitForSeconds(2f);
 
@@ -79,13 +88,13 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void NextLevel()
+    private void NextLevel()
     {
         StopAllCoroutines();
         StartCoroutine(LoadNextLevel());
     }
 
-    public void LastLevel()
+    private void LastLevel()
     {
         StopAllCoroutines();
         StartCoroutine(LoadLastLevel());
@@ -96,7 +105,29 @@ public class GameController : MonoBehaviour
         if (!rocketShip.isActiveAndEnabled)
         {
             StartCoroutine(LoadFirstLevel());
+            
+            return;
         }
-        else { return; }
+
+        if (Input.GetKeyDown(KeyCode.Backslash))
+        {
+            debug = !debug;
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightBracket))
+        {
+            if (!debug) { return; }
+
+            print("Skiping...");
+            NextLevel();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.LeftBracket))
+        {
+            if (!debug) { return; }
+
+            print("Skiping...");
+            LastLevel();
+        }
     }
 }

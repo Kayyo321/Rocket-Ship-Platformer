@@ -273,6 +273,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 548450997732105531, guid: 45ddd48d3c3be6749b567ffc97246bc4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12.746405
+      objectReference: {fileID: 0}
+    - target: {fileID: 548450997732105531, guid: 45ddd48d3c3be6749b567ffc97246bc4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 11.611527
+      objectReference: {fileID: 0}
+    - target: {fileID: 548450997732105531, guid: 45ddd48d3c3be6749b567ffc97246bc4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 103.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 548450997732105531, guid: 45ddd48d3c3be6749b567ffc97246bc4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -52.37
+      objectReference: {fileID: 0}
     - target: {fileID: 1803525168012054303, guid: 45ddd48d3c3be6749b567ffc97246bc4, type: 3}
       propertyPath: m_Name
       value: Envirnoment Lvl 6
@@ -320,6 +336,14 @@ PrefabInstance:
     - target: {fileID: 1803525168012054304, guid: 45ddd48d3c3be6749b567ffc97246bc4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041700576443038460, guid: 45ddd48d3c3be6749b567ffc97246bc4, type: 3}
+      propertyPath: m_Name
+      value: Teleporter (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314716243567159128, guid: 45ddd48d3c3be6749b567ffc97246bc4, type: 3}
+      propertyPath: m_Name
+      value: Teleporter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45ddd48d3c3be6749b567ffc97246bc4, type: 3}

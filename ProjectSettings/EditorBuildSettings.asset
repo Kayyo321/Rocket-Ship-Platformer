@@ -15,12 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 3.unity
     guid: 1153c13de52df1e40b458655116623d5
   - enabled: 1
-    path: Assets/Scenes/Level 4 Backup.unity
-    guid: 8c1b45d97496a6e47aeabe4000834883
+    path: Assets/Scenes/Level 4.unity
+    guid: 38135b0381bbf134ba13a9fa99869288
   - enabled: 1
-    path: Assets/Scenes/Level 5 Backup.unity
-    guid: 675b589f47b4c67459c857437f4f5018
+    path: Assets/Scenes/Level 5.unity
+    guid: 231de1d7291a94d4d8291f49c60016de
   - enabled: 1
-    path: Assets/Scenes/Level 6 Backup.unity
-    guid: b8e03345c22e44644a36907da32b4985
+    path: Assets/Scenes/Level 6.unity
+    guid: e05162e7137834146b88e17017762886
   m_configObjects: {}

@@ -4,22 +4,10 @@ using UnityEngine;
 
 public class Audiomanager : MonoBehaviour
 {
-    public RocketShip rocketShip, r2, r3;
+    public RocketShip rocketShip;
+
     [SerializeField] AudioClip success, explosion;
-
-    public AudioSource myAudioSource;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        myAudioSource = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] AudioSource myAudioSource;
 
     public void PlaySound(string audio)
     {

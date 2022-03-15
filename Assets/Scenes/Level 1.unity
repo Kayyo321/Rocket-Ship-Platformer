@@ -811,5 +811,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Envirnoment Lvl 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9005495171921067124, guid: 3ed718be785967e4485bd30c1ca21f25, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 56.1696
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005495171921067124, guid: 3ed718be785967e4485bd30c1ca21f25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.1307
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005495171921067124, guid: 3ed718be785967e4485bd30c1ca21f25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -25.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005495172479017475, guid: 3ed718be785967e4485bd30c1ca21f25, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 22.09305
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005495172479017475, guid: 3ed718be785967e4485bd30c1ca21f25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ed718be785967e4485bd30c1ca21f25, type: 3}

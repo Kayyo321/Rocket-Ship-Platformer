@@ -141,8 +141,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketShip: {fileID: 0}
-  r2: {fileID: 0}
-  r3: {fileID: 0}
   success: {fileID: 8300000, guid: 1cc0bc1ce71a573409a58294a74765f3, type: 3}
   explosion: {fileID: 8300000, guid: aa3bc328420ead74cb3668a0d31303c6, type: 3}
-  myAudioSource: {fileID: 0}
+  myAudioSource: {fileID: 3636647062144291783}

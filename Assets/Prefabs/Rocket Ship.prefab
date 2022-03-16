@@ -14589,6 +14589,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!225 &5227829348899262850
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927434387229677443}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1883217254035393694
 GameObject:
   m_ObjectHideFlags: 0
@@ -20408,6 +20420,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25284b72017de6b4bae573d833b86ff0, type: 3}
+--- !u!1 &927434387229677443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3277393570870792255, guid: 25284b72017de6b4bae573d833b86ff0, type: 3}
+  m_PrefabInstance: {fileID: 2424428361115338684}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &927434387229677567 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3277393570870792259, guid: 25284b72017de6b4bae573d833b86ff0, type: 3}
+  m_PrefabInstance: {fileID: 2424428361115338684}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &927434387219916113 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3277393570873484013, guid: 25284b72017de6b4bae573d833b86ff0, type: 3}
@@ -20419,11 +20441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f415fef43714d74398527c512d74798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &927434387229677567 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3277393570870792259, guid: 25284b72017de6b4bae573d833b86ff0, type: 3}
-  m_PrefabInstance: {fileID: 2424428361115338684}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2605547339640237345
 PrefabInstance:
   m_ObjectHideFlags: 0

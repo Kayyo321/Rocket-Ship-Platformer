@@ -86,7 +86,6 @@ public class RocketShip : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
         myHealthBar.SetHealth(currentHealth);
 
         shakeCamera.ShakeCamera(CamShakeType.ROCKET_DAMAGE);

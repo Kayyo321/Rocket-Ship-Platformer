@@ -12,17 +12,19 @@ public class RocketShip : MonoBehaviour
     [SerializeField] int maxHealth = 100;
     [SerializeField] ParticleSystem explosion;
     [SerializeField] ParticleSystem flames;
-    [SerializeField] HealthBar myHealthBar;
     #endregion
 
     #region Booleans
     public bool moving = true;
     #endregion
-    
+
     ShakeCam shakeCamera;
 
     #region other
     int currentHealth;
+    
+    HealthBar myHealthBar;
+    CanvasFade canvasFade;
 
     Rigidbody myRigidBody;
 
@@ -39,12 +41,14 @@ public class RocketShip : MonoBehaviour
         shakeCamera = FindObjectOfType<ShakeCam>();
 
         myRigidBody = GetComponent<Rigidbody>();
-        myAudioSource = GetComponent<AudioSource>();
 
+        myAudioSource = GetComponent<AudioSource>();
         audioManager = FindObjectOfType<Audiomanager>();
 
         gameController = FindObjectOfType<GameController>();
 
+        myHealthBar = gameObject.GetComponentInChildren<HealthBar>();
+        canvasFade = gameObject.GetComponentInChildren<CanvasFade>();
         currentHealth = maxHealth;
         myHealthBar.SetMaxHealth(maxHealth);
     }
@@ -87,6 +91,8 @@ public class RocketShip : MonoBehaviour
     {
         currentHealth -= damage;
         myHealthBar.SetHealth(currentHealth);
+
+        canvasFade.Fade();
 
         shakeCamera.ShakeCamera(CamShakeType.ROCKET_DAMAGE);
     }

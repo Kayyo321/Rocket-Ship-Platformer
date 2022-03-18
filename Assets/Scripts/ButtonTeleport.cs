@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonTeleport : MonoBehaviour
 {
@@ -11,8 +12,22 @@ public class ButtonTeleport : MonoBehaviour
 
     void Start()
     {
-        teleportA.SetActive(false);
-        teleportB.SetActive(false);
+        try
+        {
+            teleportA.SetActive(false);
+            teleportB.SetActive(false);
+        }
+        catch
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 7)
+            {
+                Debug.LogError("Could not find teleporters to turn off!");
+            }
+            else
+            {
+                return; // It won't matter
+            }
+        }
     }
 
     public void SwitchTeleportState(bool button)

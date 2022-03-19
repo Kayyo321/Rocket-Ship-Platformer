@@ -19,7 +19,7 @@ public class LegCollision : MonoBehaviour
         {
             case "Finish":
 
-                    print("RocketShip Landed On Legs");
+                print("RocketShip Landed On Legs");
 
                 rocketShip.LandedOnLegs();
 

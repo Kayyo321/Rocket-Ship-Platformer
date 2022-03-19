@@ -187,34 +187,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1629903660644420110, guid: f53e23a550afffc4398d99d00b7238d2, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2942624715493335880, guid: f53e23a550afffc4398d99d00b7238d2, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2942624715791477652, guid: f53e23a550afffc4398d99d00b7238d2, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2942624716911661399, guid: f53e23a550afffc4398d99d00b7238d2, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2942624717161796291, guid: f53e23a550afffc4398d99d00b7238d2, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2942624717229881079, guid: f53e23a550afffc4398d99d00b7238d2, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4157416749479880411, guid: f53e23a550afffc4398d99d00b7238d2, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 4870766013840979787, guid: f53e23a550afffc4398d99d00b7238d2, type: 3}
       propertyPath: m_Name
       value: Envirnoment Lvl 5
@@ -262,22 +234,6 @@ PrefabInstance:
     - target: {fileID: 4870766013840979828, guid: f53e23a550afffc4398d99d00b7238d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6702335023231231343, guid: f53e23a550afffc4398d99d00b7238d2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 14.029223
-      objectReference: {fileID: 0}
-    - target: {fileID: 6702335023231231343, guid: f53e23a550afffc4398d99d00b7238d2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.28648
-      objectReference: {fileID: 0}
-    - target: {fileID: 6702335023231231343, guid: f53e23a550afffc4398d99d00b7238d2, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 14.179328
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937714265113934134, guid: f53e23a550afffc4398d99d00b7238d2, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f53e23a550afffc4398d99d00b7238d2, type: 3}

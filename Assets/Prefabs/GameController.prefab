@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849d0ad0db89efe4389279bfdba25704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketShip: {fileID: 0}
   shakeCamera: {fileID: 0}
+  dummyUI: {fileID: 2022666539342247105, guid: 9b81338ec9370fa4494b3a8f7769fbfe, type: 3}
+  debug: 0

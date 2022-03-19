@@ -8,7 +8,8 @@ public class TakeInputLvl7 : MonoBehaviour
     [SerializeField] Camera     camMove;
     [SerializeField] GameObject context;
 
-    private float               fov;
+    private float fov;
+    private float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class TakeInputLvl7 : MonoBehaviour
         context.SetActive(true);
 
         fov = 90;
+        speed = 1.5f;
     }
 
     // Update is called once per frame
@@ -30,13 +32,13 @@ public class TakeInputLvl7 : MonoBehaviour
         {
             fov++;
 
-            camMove.transform.Rotate(-1f, 0f, 0f, Space.Self);
+            camMove.transform.Rotate(-speed, 0f, 0f, Space.Self);
         }   
         else if (Input.GetKey(KeyCode.DownArrow) && !(fov <= -90))
         {
             fov--;
 
-            camMove.transform.Rotate(1f, 0f, 0f, Space.Self);
+            camMove.transform.Rotate(speed, 0f, 0f, Space.Self);
         }
     }
 }

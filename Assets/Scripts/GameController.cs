@@ -6,7 +6,7 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] ShakeCam shakeCamera;
+    [SerializeField] ShakeCam   shakeCamera;
 
     public bool debug;
 
@@ -33,9 +33,9 @@ public class GameController : MonoBehaviour
         print("GameController.RocketDestroyed Executing...");
         print(FindObjectOfType<RocketShip>());
 
-        shakeCamera.ShakeCamera(CamShakeType.ROCKET_EXPLODE);
+        shakeCamera.ShakeCamera(CamShakeType.ROCKET_DAMAGE);
 
-        if (FindObjectOfType<RocketShip>() == null)
+        if (!rocketShip.mainRocketAlive)
         {
             print("Reseting The Game...");
             ResetGame();

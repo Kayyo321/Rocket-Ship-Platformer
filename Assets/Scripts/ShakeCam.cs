@@ -34,12 +34,12 @@ public class ShakeCam : MonoBehaviour
 
         if (shakeType == CamShakeType.ROCKET_EXPLODE)
         {
-            noise.m_AmplitudeGain = intensity;
-            noise.m_FrequencyGain = intensity;
+            noise.m_AmplitudeGain = intensity * 10f;
+            noise.m_FrequencyGain = intensity * 10f;
         }
         else if (shakeType == CamShakeType.ROCKET_DAMAGE)
         {
-            noise.m_AmplitudeGain = intensity / 10.0f;
+            noise.m_AmplitudeGain = intensity / 10f;
             noise.m_FrequencyGain = intensity / 10;
         }
 

@@ -13,10 +13,12 @@ public class RocketShip : MonoBehaviour
     [SerializeField] int maxHealth = 100;
     [SerializeField] ParticleSystem explosion;
     [SerializeField] ParticleSystem flames;
+    [SerializeField] GameObject mainRocket;
     #endregion
 
     #region Booleans
     public bool moving = true;
+    public bool mainRocketAlive;
     #endregion
 
     ShakeCam shakeCamera;
@@ -39,6 +41,8 @@ public class RocketShip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        mainRocketAlive = true;
+
         shakeCamera = FindObjectOfType<ShakeCam>();
 
         myRigidBody = GetComponent<Rigidbody>();
@@ -152,9 +156,11 @@ public class RocketShip : MonoBehaviour
 
     private void collisionsHandeling(Collision collision)
     {
-        ParticleSystem TempExplosion = Instantiate(explosion);
+        ParticleSystem TempExplosion     = Instantiate(explosion);
         TempExplosion.transform.position = gameObject.transform.position;
         TempExplosion.Play();
+
+        if (TempExplosion.isStopped) { Destroy(TempExplosion); }
 
         audioManager.PlaySound("Explosion");
 
@@ -162,10 +168,23 @@ public class RocketShip : MonoBehaviour
             TakeDamage(30);
 
         if (currentHealth > 0) { return; }
+        
+        if (gameObject != mainRocket)
+        {
+            gameObject.SetActive(false);
+            gameController.RocketDestroyed();
+        }
+        else
+        {
+            mainRocketAlive = false;
+            gameController.RocketDestroyed();
 
-        gameObject.SetActive(false);
-        gameController.RocketDestroyed();
+            ParticleSystem tmpExplosion     = Instantiate(explosion);
+            tmpExplosion.transform.position = gameObject.transform.position;
+            tmpExplosion.Play();
 
+            shakeCamera.ShakeCamera(CamShakeType.ROCKET_EXPLODE);
+        }
     }
 
     public void LandedOnLegs()
@@ -212,19 +231,22 @@ public class RocketShip : MonoBehaviour
         float rotationSpeed = rotationalThrust * Time.deltaTime;
         float thrustScale = mainThrust * Time.deltaTime;
 
-        if (direction == "left")
+        if (mainRocketAlive)
         {
-            transform.Rotate(Vector3.forward * rotationSpeed);
+            if (direction == "left")
+            {
+                transform.Rotate(Vector3.forward * rotationSpeed);
+            }
+            else if (direction == "right")
+            {
+                transform.Rotate(-Vector3.forward * rotationSpeed);
+            }
+            else if (direction == "up")
+            {
+                myRigidBody.AddRelativeForce(Vector3.up * thrustScale);
+            }
+        
+            myRigidBody.freezeRotation = false;
         }
-        else if (direction == "right")
-        {
-            transform.Rotate(-Vector3.forward * rotationSpeed);
-        }
-        else if (direction == "up")
-        {
-            myRigidBody.AddRelativeForce(Vector3.up * thrustScale);
-        }
-
-        myRigidBody.freezeRotation = false;
     }
 }

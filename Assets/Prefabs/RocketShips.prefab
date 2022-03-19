@@ -105,6 +105,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
+      propertyPath: mainRocket
+      value: 
+      objectReference: {fileID: 7995104194712049041}
+    - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
       propertyPath: cameraPosition
       value: 
       objectReference: {fileID: 0}
@@ -118,6 +122,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
+--- !u!1 &7995104194712049041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2424428360760684198, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
+  m_PrefabInstance: {fileID: 5715380566502275895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7995104194712049040 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2424428360760684199, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
@@ -187,6 +196,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
+      propertyPath: mainRocket
+      value: 
+      objectReference: {fileID: 7995104195506172007}
+    - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
       propertyPath: cameraPosition
       value: 
       objectReference: {fileID: 0}
@@ -196,6 +209,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
+--- !u!1 &7995104195506172007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2424428360760684198, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
+  m_PrefabInstance: {fileID: 5715380567766507201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7995104195506172006 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2424428360760684199, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
@@ -280,6 +298,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
+      propertyPath: mainRocket
+      value: 
+      objectReference: {fileID: 7995104194712049041}
     - target: {fileID: 8915916494402871595, guid: 2d479e31a58d060409f879fa11f6339a, type: 3}
       propertyPath: cameraPosition
       value: 

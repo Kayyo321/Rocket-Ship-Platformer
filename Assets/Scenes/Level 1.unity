@@ -347,6 +347,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 587148d70c4d30e48bfcad8216f77574, type: 3}
+--- !u!1 &648291498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7995104194712049041, guid: 6f1ba42309de39f4fb93ca06964039c8, type: 3}
+  m_PrefabInstance: {fileID: 5715380568403608506}
+  m_PrefabAsset: {fileID: 0}
 --- !u!108 &705507994 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 7222826723206676643, guid: 3ed718be785967e4485bd30c1ca21f25, type: 3}
@@ -802,6 +807,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3813051935641665514, guid: 6f1ba42309de39f4fb93ca06964039c8, type: 3}
+      propertyPath: mainRocket
+      value: 
+      objectReference: {fileID: 648291498}
     - target: {fileID: 4868379038287681202, guid: 6f1ba42309de39f4fb93ca06964039c8, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

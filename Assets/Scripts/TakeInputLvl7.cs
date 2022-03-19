@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class TakeInputLvl7 : MonoBehaviour
 {
     [SerializeField] Camera     camMove;
-    
     [SerializeField] GameObject context;
 
     private float               fov;
@@ -14,6 +13,8 @@ public class TakeInputLvl7 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        context.SetActive(true);
+
         fov = 90;
     }
 

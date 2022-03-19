@@ -1086,6 +1086,14 @@ PrefabInstance:
       propertyPath: field of view
       value: 53
       objectReference: {fileID: 0}
+    - target: {fileID: 589814231284138454, guid: 553d0a114a0fda7409295d112fa5afe9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 589814231284138454, guid: 553d0a114a0fda7409295d112fa5afe9, type: 3}
+      propertyPath: m_Intensity
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 5990328301518944233, guid: 553d0a114a0fda7409295d112fa5afe9, type: 3}
       propertyPath: m_UseGravity
       value: 0

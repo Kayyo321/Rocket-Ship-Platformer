@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuButtonHandler : MonoBehaviour
 {
@@ -10,20 +11,17 @@ public class MainMenuButtonHandler : MonoBehaviour
 
     [SerializeField] GameObject pos1;
     [SerializeField] GameObject pos2;
+    [SerializeField] GameObject mainMenuCanvas;
+    [SerializeField] GameObject optionsMenuCanvas;
 
-    [SerializeField] CanvasGroup mainMenuCanvas;
-    [SerializeField] CanvasGroup optionsMenuCanvas;
-
-    [SerializeField] TextMeshProUGUI soundText;
-
-    public float volume;
+    [SerializeField] Slider slider;
 
     private void Start()
     {
+        AudioListener.volume = slider.value;
+
         mainMenuCanvas.gameObject.SetActive(true);
         optionsMenuCanvas.gameObject.SetActive(false);
-
-        volume = 2;
     }
 
     #region MainMenu
@@ -64,26 +62,9 @@ public class MainMenuButtonHandler : MonoBehaviour
         print($"Changing FullScreen Settings To : {Screen.fullScreen}");
     }
 
-    public void SoundSettingUp()
+    public void SoundSetting()
     {
-        if (volume < 2)
-        {
-            volume += 0.5f;
-
-            soundText.text = $"Volume : {volume * 4}0%";
-            AudioListener.volume = volume;
-        }
-    }
-
-    public void SoundSettingDown()
-    {
-        if (volume > 0)
-        {
-            volume -= 0.5f;
-
-            soundText.text = $"Volume : {volume * 4}0%";
-            AudioListener.volume = volume;
-        }
+        AudioListener.volume = slider.value;
     }
 
     public void BackToMainMenu()

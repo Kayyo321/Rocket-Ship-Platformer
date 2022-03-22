@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+
+/// <summary>
+/// This class controls the flow of the game based on user input and the 
+/// state of the rocket.
+/// </summary>
 public class GameController : MonoBehaviour
 {
     [SerializeField] ShakeCam   shakeCamera;
@@ -12,6 +17,10 @@ public class GameController : MonoBehaviour
 
     RocketShip rocketShip;
 
+    /// <summary>
+    /// Initializing properties.
+    /// Requires that an instance of the rocket-ship is in your scene.
+    /// </summary>
     private void Start()
     {
         debug = false;
@@ -21,6 +30,9 @@ public class GameController : MonoBehaviour
         Debug.Assert(rocketShip != null);
     }
 
+    /// <summary>
+    /// Stops all remaining coroutines and loads the loads the main menu.
+    /// </summary>
     public void ResetGame()
     {
         StopAllCoroutines();
@@ -28,6 +40,10 @@ public class GameController : MonoBehaviour
         StartCoroutine(LoadFirstLevel());
     }
 
+    /// <summary>
+    /// This handles the camera shake, when a rocket is destroyed,
+    /// and resets the game if the middle rocket is no longer alive.
+    /// </summary>
     public void RocketDestroyed()
     {
         print("GameController.RocketDestroyed Executing...");
@@ -42,17 +58,23 @@ public class GameController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This handles level progression whenever the rocket lands 
+    /// on the landing pad.
+    /// </summary>
     public void RocketLandedOnLandingPad()
     {
         NextLevel();
     }
-
+    
+    // Waits for 2 seconds, then loads the main menu
     private IEnumerator LoadFirstLevel()
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(0);
     }
 
+    // Waits for 2 seconds, then loads the next level, if there is one
     private IEnumerator LoadNextLevel()
     {
         yield return new WaitForSeconds(2f);
@@ -71,6 +93,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+    // Waits for 2 seconds, then loads the previous level
     private IEnumerator LoadLastLevel()
     {
         yield return new WaitForSeconds(2f);
@@ -89,27 +112,28 @@ public class GameController : MonoBehaviour
         }
     }
 
+    // Loads the next level in the build index
     private void NextLevel()
     {
         StopAllCoroutines();
         StartCoroutine(LoadNextLevel());
     }
 
+    // Loads the previous
     private void LastLevel()
     {
         StopAllCoroutines();
         StartCoroutine(LoadLastLevel());
     }
 
+    /// <summary>
+    /// Handles all keyboard input related to debugging:
+    ///     * "\" Enables Debuging 
+    ///     * "[" Loads previous level
+    ///     * "]" Loads next level
+    /// </summary>
     private void Update()
-    {
-        if (!rocketShip.isActiveAndEnabled)
-        {
-            StartCoroutine(LoadFirstLevel());
-            
-            return;
-        }
-
+    { 
         if (Input.GetKeyDown(KeyCode.Backslash))
         {
             debug = !debug;

@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is designed for gameobjects that wait a few seconds before being destroyed.
+/// </summary>
 public class KillAfterLifetime : MonoBehaviour
 {
     [SerializeField] float LifeSeconds;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    /// <summary>
+    /// Destroys the gameobject after a set amout of seconds.
+    /// </summary>
     void Update()
     {
         LifeSeconds -= Time.deltaTime;

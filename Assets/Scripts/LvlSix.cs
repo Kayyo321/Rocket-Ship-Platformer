@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class handles code that disables some features in level 6, that are in the rest of the game
+/// </summary>
 public class LvlSix : MonoBehaviour
 {
     #region GameObject
@@ -11,40 +14,22 @@ public class LvlSix : MonoBehaviour
     public GameObject Text;
     #endregion
 
+    #region Other Scripts
     public GameController gameController;
+    #endregion
 
     #region Vector3
     public Vector3 newScale;
     public Vector3 newPos;
     #endregion
 
+    #region Float
     public float wait = 0f;
+    #endregion
 
-    public IEnumerator ScaleTextDown()
-    {
-        yield return new WaitForSeconds(2f);
-
-        // scale down
-
-        Text.transform.localScale = newScale;
-
-        // move to bottom left
-
-        Text.transform.position = newPos;
-
-        for (int i = 0; i < 10; i++)
-        {
-            yield return new WaitForSeconds(0.1f);
-        }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(ScaleTextDown());
-    }
-
-    // Update is called once per frame
+    /// <summary>
+    /// Makes sure that the teleporters are in the level, rather than being disabled
+    /// </summary>
     void Update()
     {
         if (wait < 2f)

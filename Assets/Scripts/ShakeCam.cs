@@ -3,24 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+/// <summary>
+/// This enum holds the different explosion types.
+/// </summary>
 public enum CamShakeType
 {
     ROCKET_EXPLODE = 0,
     ROCKET_DAMAGE = 1
 }
 
+/// <summary>
+/// This class handles camera shaking whenever rocket is damaged.
+/// </summary>
 public class ShakeCam : MonoBehaviour
 {
     [SerializeField] float intensity;
 
     private CinemachineVirtualCamera myVirtualCamera;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Initializes the camera because it is a private variable.
+    /// </summary>
     void Start()
     {
         myVirtualCamera = GetComponent<CinemachineVirtualCamera>();
     }
 
+    /// <summary>
+    /// Calls the ScreenShake function which shakes the screen with different types of explosion.
+    /// </summary>
+    /// <param name="shakeType"></param>
     public void ShakeCamera(CamShakeType shakeType)
     {
         StopAllCoroutines();
@@ -28,6 +40,11 @@ public class ShakeCam : MonoBehaviour
         StartCoroutine(ScreenShake(shakeType));
     }
 
+    /// <summary>
+    /// Shakes the screen by different amounts based on the parameter given.
+    /// </summary>
+    /// <param name="shakeType"></param>
+    /// <returns>Waits for a 10th of a second</returns>
     private IEnumerator ScreenShake(CamShakeType shakeType)
     {
         CinemachineBasicMultiChannelPerlin noise = myVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();

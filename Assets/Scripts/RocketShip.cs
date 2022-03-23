@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This class holds the code for all of the rocketships, and their functionalities.
+/// </summary>
 public class RocketShip : MonoBehaviour
 {
 
@@ -38,7 +41,9 @@ public class RocketShip : MonoBehaviour
     #endregion
     #endregion
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Initializes all of the private functions.
+    /// </summary>
     void Start()
     {
         mainRocketAlive = true;
@@ -57,8 +62,17 @@ public class RocketShip : MonoBehaviour
         currentHealth = maxHealth;
         myHealthBar.SetMaxHealth(maxHealth);
     }
-
-    // Update is called once per frame
+    
+    /// <summary>
+    /// Handles rocket movement:
+    ///     * Rotation
+    ///     * Rocket thrust
+    /// 
+    /// Handles Debug input that can't be done in the GameController:
+    ///     * Turning rigidbody to kinematic
+    ///     * Making the rocket invinsible
+    ///     * Taking Damage
+    /// </summary>
     void Update()
     {
         if (moving)
@@ -66,12 +80,12 @@ public class RocketShip : MonoBehaviour
             RocketMovement();
         }
 
-        if (Input.GetKeyDown(KeyCode.RightBracket)) // Skip Level
+        if (Input.GetKeyDown(KeyCode.RightBracket)) // Skip the level
         {
             if (!gameController.debug) { return; }
 
             myRigidBody.isKinematic = true;
-            moving = false; // make the player invincible
+            moving = false; // Make the player invincible
         }
        
         if (Input.GetKeyDown(KeyCode.LeftBracket))
@@ -79,7 +93,7 @@ public class RocketShip : MonoBehaviour
             if (!gameController.debug) { return; }
 
             myRigidBody.isKinematic = true;
-            moving = false; // make the player invincible
+            moving = false; // Make the player invincible.
         }
         if (Input.GetKeyDown(KeyCode.M) && gameController.debug)
         {
@@ -87,11 +101,21 @@ public class RocketShip : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles physical rotation.
+    /// </summary>
     private void LateUpdate()
     {
         transform.localEulerAngles = new Vector3(0, 0, transform.localEulerAngles.z);
     }
 
+    /// <summary>
+    /// Handles damage to the rocket:
+    ///     * Decreasing the rockets health
+    ///     * Fading the healthbar
+    ///     * Shaking the camera
+    /// </summary>
+    /// <param name="damage"></param>
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -102,6 +126,15 @@ public class RocketShip : MonoBehaviour
         shakeCamera.ShakeCamera(CamShakeType.ROCKET_DAMAGE);
     }
 
+    /// <summary>
+    /// Handles rocketship collisions:
+    ///     * Landing pad
+    ///     * Destructable walls:
+    ///     * Teleporters
+    ///     * Buttons
+    ///     * Everything else (just takes damage)
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         if (!moving) { return; } // turn off any of the following collisions if we reached the end
@@ -154,6 +187,15 @@ public class RocketShip : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles effects of bad collision:
+    ///     * Creates an explosion effect
+    ///     * Plays a explosion sfx
+    ///     * Decreases rocket's health
+    ///     * Destroys the rocket if health is >= 0
+    ///     * Changes camera shake edition (i. e. Rocket Died, or Rocket Damaged)
+    /// </summary>
+    /// <param name="collision"></param>
     private void collisionsHandeling(Collision collision)
     {
         ParticleSystem TempExplosion     = Instantiate(explosion);
@@ -187,6 +229,10 @@ public class RocketShip : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Forces the player to land the rocket on it's legs
+    /// to finish the level.
+    /// </summary>
     public void LandedOnLegs()
     {
         print("Success!");
@@ -198,6 +244,9 @@ public class RocketShip : MonoBehaviour
         gameController.RocketLandedOnLandingPad();
     }
 
+    /// <summary>
+    /// Takes input for movement handling.
+    /// </summary>
     private void RocketMovement()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -224,6 +273,11 @@ public class RocketShip : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Uses input to change rotation and thrust
+    /// of the rocket.
+    /// </summary>
+    /// <param name="direction"></param>
     private void MovementControls(string direction)
     {
         myRigidBody.freezeRotation = true;

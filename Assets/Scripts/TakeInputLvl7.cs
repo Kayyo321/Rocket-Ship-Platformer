@@ -3,19 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Handles handles code that disables some features in level 7, that are in the rest of the game
+/// </summary>
 public class TakeInputLvl7 : MonoBehaviour
 {
-    [SerializeField] Camera     camMove;
+    [SerializeField] Camera camMove;
 
-    private float               fov;
+    private float fov;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Initializes the cameras field of view
+    /// </summary>
     void Start()
     {
-        fov = 90;
+        fov = 70;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Handles input to rotate the camera:
+    ///     * "UpArrow" Rotates the camera upwards
+    ///     * "DownArrow" Rotates the camera downwards
+    /// </summary>
     void Update()
     { 
         if (Input.GetKey(KeyCode.UpArrow) && !(fov >= 90))

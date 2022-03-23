@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     RocketShip rocketShip;
 
     /// <summary>
-    /// Initializing properties.
+    /// Initializing properties;
     /// Requires that an instance of the rocket-ship is in your scene.
     /// </summary>
     private void Start()
@@ -67,14 +67,14 @@ public class GameController : MonoBehaviour
         NextLevel();
     }
     
-    // Waits for 2 seconds, then loads the main menu
+    // Waits for 2 seconds, then loads the main menu.
     private IEnumerator LoadFirstLevel()
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(0);
     }
 
-    // Waits for 2 seconds, then loads the next level, if there is one
+    // Waits for 2 seconds, then loads the next level, if there is one.
     private IEnumerator LoadNextLevel()
     {
         yield return new WaitForSeconds(2f);
@@ -93,7 +93,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    // Waits for 2 seconds, then loads the previous level
+    // Waits for 2 seconds, then loads the previous level.
     private IEnumerator LoadLastLevel()
     {
         yield return new WaitForSeconds(2f);
@@ -112,14 +112,14 @@ public class GameController : MonoBehaviour
         }
     }
 
-    // Loads the next level in the build index
+    // Loads the next level in the build index.
     private void NextLevel()
     {
         StopAllCoroutines();
         StartCoroutine(LoadNextLevel());
     }
 
-    // Loads the previous
+    // Loads the previous.
     private void LastLevel()
     {
         StopAllCoroutines();

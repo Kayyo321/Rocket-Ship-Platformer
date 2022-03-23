@@ -30,6 +30,8 @@ public class MainMenuButtonHandler : MonoBehaviour
 
         mainMenuCanvas.gameObject.SetActive(true);
         optionsMenuCanvas.gameObject.SetActive(false);
+
+        Time.timeScale = 1f;
     }
 
     #region MainMenu

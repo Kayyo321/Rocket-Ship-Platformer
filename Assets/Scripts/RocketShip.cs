@@ -28,7 +28,7 @@ public class RocketShip : MonoBehaviour
 
     #region other
     int currentHealth;
-    
+
     HealthBar myHealthBar;
     CanvasFade canvasFade;
 

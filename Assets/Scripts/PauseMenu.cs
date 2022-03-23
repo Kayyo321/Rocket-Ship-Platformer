@@ -91,8 +91,6 @@ public class PauseMenu : MonoBehaviour
     {
         print("Going back to the main menu!");
 
-        Time.timeScale = 1f;
-
         SceneManager.LoadScene(0);
     }
     #endregion

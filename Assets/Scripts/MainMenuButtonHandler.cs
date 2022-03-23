@@ -26,7 +26,7 @@ public class MainMenuButtonHandler : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        AudioListener.volume = slider.value;
+        slider.value = AudioListener.volume;
 
         mainMenuCanvas.gameObject.SetActive(true);
         optionsMenuCanvas.gameObject.SetActive(false);

@@ -2,6 +2,10 @@
  
 Platforming, but with rocket ships!
 
+Documentation Video :
+
+[![Documentation Video](https://img.youtube.com/vi/cd5wR_8o1uc/0.jpg)](https://www.youtube.com/watch?v=cd5wR_8o1uc)
+
 # Who?
 
 This game is made off a tutorial by [Michael Murr](https://www.udemy.com/user/michel-murr/), 

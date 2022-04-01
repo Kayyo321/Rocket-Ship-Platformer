@@ -1,5 +1,7 @@
 # Rocket Ship Platformer
  
+By Sullivan Baczynski-Bruce.
+
 Platforming, but with rocket ships!
 
 Documentation Video :
